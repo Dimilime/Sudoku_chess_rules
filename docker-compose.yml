@@ -1,0 +1,31 @@
+version: '3.9'
+services:
+  php:
+    build: ./app/
+    ports:
+      - 8080:80
+
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - db
+    networks:
+    - mynet
+
+  db:
+    build: ./db/
+    environment:
+      POSTGRES_DB: sudokudb
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+    ports:
+      - 5432:5432
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - mynet
+networks:
+  mynet:
+    name: my-shared-db-network
+    driver: bridge
+    

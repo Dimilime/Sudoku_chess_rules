@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SUDOKU</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel=" shorcut icon" type="image/x-icon" href="https://img.icons8.com/doodle/48/000000/puzzle--v1.png">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="body1">
+        <h1>Bienvenue à toi</h1>
+        <div id="divForm">
+            <label for="name">Entre ton nom pour accéder au SUDOKU: </label>
+            <input type="text" id="name" name="name" placeholder="Exemple: Martin" required autofocus>
+            <button id="butt" type="submit">Envoyer</button>
+        </div>
+    </div>
+    <div id="body2" style="display: none">
+        <h1>SUDOKU</h1>
+        <p>
+            <button><a href="index.html">Deconnexion</a></button>
+        </p>
+        <p>
+            <span id="spanHelp" onclick="hideORshowHelp()"><strong>Clic ici pour voir les règles</strong></span>
+        </p>
+        <div id="divSpan"><span id="infoCoord"></span></div>
+        <p id='help' style="display: none">
+        <span>
+        Tout d'abord, si tu actualises la page ta grille risque de changer, donc tant que tu ne l'as pas finis n'actualise pas!<br>
+        Ensuite, un sudoku est une grille de 9x9 dans lesquelles chaque case contient un chiffre de 1 à 9.<br>
+        Un même chiffre ne peut pas apparaître deux fois sur la même ligne ou sur la même colonne. <br>
+        De plus, la grille est divisée en 9 blocs de 3x3 et un même chiffre ne peut pas apparaître deux fois dans le même bloc.<br>
+        A toi de compléter la grille en respectant les règles <br>
+        Tu peux cliquer sur une case pour en avoir les pencil marks et ensuite recliquer et choisir ton chiffre <br>
+        Remarque : tu peux autant utiliser le pavé numérique à droite que ton clavier pour remplir les cases!<br>
+        2 ème remarque: tu peux aussi appuyer sur la touche "p" pour Pencil Marks et delete pour effacer. <br>
+        <span id="regleSpecial"></span><br>
+        Reclic pour fermer.
+        </span>
+        </p>
+        <canvas id="can" width="540px" height="540px" >This appears in the browser not capable of HTML5</canvas>
+    </div>
+
+</body>
+</html>
+

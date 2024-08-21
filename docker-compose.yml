@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   php:
-    build: ./app/
+    build: ./app/DockerFile
     ports:
       - 8080:80
 
@@ -13,11 +13,7 @@ services:
     - mynet
 
   db:
-    build: ./db/
-    environment:
-      POSTGRES_DB: sudokudb
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: pass
+    build: ./db/DockerFile
     ports:
       - 5432:5432
     volumes:

@@ -16,6 +16,10 @@ services:
     build: ./db/DockerFile
     ports:
       - 5432:5432
+    environment:
+      - POSTGRES_DB=${DBNAME}
+      - POSTGRES_USER=${USER}
+      - POSTGRES_PASSWORD=${PWD}
     volumes:
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
